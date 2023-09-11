@@ -7,7 +7,7 @@ import lombok.Value;
 
 public class DataHelperCard {
     private static String month = "08";
-    private static String year = "31";
+    private static String year = "23";
     private static String owner = "Ivan Ivalik";
     private static String cvc = "666";
     private static String approvedCardNumber = "4444444444444441";
