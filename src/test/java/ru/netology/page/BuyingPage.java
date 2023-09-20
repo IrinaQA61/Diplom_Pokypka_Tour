@@ -3,6 +3,8 @@ package ru.netology.page;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
@@ -87,13 +89,14 @@ public class BuyingPage {
     public static void checkMessageRequiredField() {
         requiredField.shouldBe(visible);
     }
+
     @Step("Сообщение об успешной операции")
     public static void checkMessageSuccessfully() {
-        messageSuccessfully.waitUntil(visible, 75000);
+        messageSuccessfully.should(visible, Duration.ofMillis(75000));
     }
 
     @Step("Сообщение об ошибке при совершении операции")
     public static void checkMessageError() {
-        messageError.waitUntil(visible, 75000);
+        messageError.should(visible, Duration.ofMillis(75000));
     }
 }
